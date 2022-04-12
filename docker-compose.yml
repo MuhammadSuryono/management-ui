@@ -1,0 +1,33 @@
+version: "3.7"
+services:
+  app:
+    build:
+      args:
+        user: suryono
+        uid: 1000
+      context: ./
+      dockerfile: Dockerfile
+    image: management-ui
+    container_name: management-ui-app
+    restart: unless-stopped
+    working_dir: /var/www/management-ui
+    volumes:
+      - ./:/var/www/management-ui
+    networks:
+      - management-ui
+
+  nginx:
+    image: nginx:alpine
+    container_name: management-ui-nginx
+    restart: unless-stopped
+    ports:
+      - 9000:80
+    volumes:
+      - ./:/var/www/management-ui
+      - ./docker-compose/nginx:/etc/nginx/conf.d/
+    networks:
+      - management-ui
+
+networks:
+  management-ui:
+    driver: bridge
