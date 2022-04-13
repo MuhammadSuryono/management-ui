@@ -1,3 +1,4 @@
 system/sessions/ci_session*
 ./.idea
 .env
+./vendor
