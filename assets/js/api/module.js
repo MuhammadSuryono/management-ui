@@ -1,7 +1,7 @@
 const BASE_URL_API = "http://localhost:8000/api/v1";
-const config = require("../../../config.json");
+// const config = require("../../../config.json");
 
-console.log(config.try)
+// console.log(config.try)
 
 /***
  *
@@ -41,12 +41,12 @@ function redirectLogin(query) {
 
 /***
  *
- * @param angka
+ * @param number
  * @returns {string}
  */
-function convertRupiah(angka) {
-    angka = angka === null ? 0 : angka;
-    let	number_string = angka.toString(),
+function convertRupiah(number) {
+    number = number === null ? 0 : number;
+    let	number_string = number.toString(),
         sisa 	= number_string.length % 3,
         rupiah 	= number_string.substr(0, sisa),
         ribuan 	= number_string.substr(sisa).match(/\d{3}/g);
