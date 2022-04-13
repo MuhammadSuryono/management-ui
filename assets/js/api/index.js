@@ -6,8 +6,11 @@ function httpRequest(url, method, body, handle, errorHandler) {
     url: BASE_URL_API + path,
     type: method,
     dataType: "json",
+    crossDomain: true,
     headers: {
-      "Authorization": `${localStorage.getItem("tokenType")} ${localStorage.getItem("token")}`
+      "Authorization": `${localStorage.getItem("tokenType")} ${localStorage.getItem("token")}`,
+      "Access-Control-Allow-Origin":"*",
+      "Accept": "application/json",
     },
     data: JSON.stringify(body),
     processData: false,
