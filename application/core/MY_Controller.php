@@ -380,7 +380,7 @@ class MY_Controller extends CI_Controller
     public function set_javascript_file(...$files)
     {
         foreach ($files as $file) {
-            $this->js[] = $file;
+            $this->js[] = $this->base_url($file);
         }
     }
 
