@@ -275,7 +275,7 @@ class MY_Controller extends CI_Controller
     {
         switch ($environment) {
             case 'development':
-                return 'http://192.168.10.240/budget-service/api/v1/';
+                return 'http://192.168.10.240/user-central-service/api/v1/';
             case 'local':
                 return 'http://localhost:8000/api/v1/';
             case 'production':
